@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Car List</title>
+</head>
+<body>
+<h1>Cars:</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Car_make</th>
+        <th>Model</th>
+    </tr>
+    <tr th:each="car: ${cars}">
+        <td th:text="${car.id}"></td>
+        <td><a th:href="@{/cars/{id}(id=${car.id})}" th:text="${car.car_make}"></a></td>
+        <td th:text="${car.model}"></td>
+    </tr>
+</table>
+</body>
+</html>
